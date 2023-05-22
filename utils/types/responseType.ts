@@ -1,4 +1,5 @@
 export interface NoticePostType {
+  itemId: string;
   [x: string]: any;
   id: number;
   title: string;
