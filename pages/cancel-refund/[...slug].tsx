@@ -19,9 +19,6 @@ export default function CancelDetail() {
 
 export async function getStaticPaths() {
   const paths = [
-    // {
-    //   params: { slug: [] },
-    // },
     {
       params: { slug: ['cancellations'] },
     },

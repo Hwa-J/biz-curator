@@ -13,9 +13,6 @@ export default function EditRequestPage() {
 
 export async function getStaticPaths() {
   const paths = [
-    // {
-    //   params: { slug: [] },
-    // },
     {
       params: { reqType: ['purchase'] },
     },
@@ -27,7 +24,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: any) {
-  // Make sure params are what we expected
   console.log(params);
   return {
     props: {
