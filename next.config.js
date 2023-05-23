@@ -11,6 +11,19 @@ const nextConfig = {
       },
     ],
   },
+  pageExtensions: ['mdx', 'md', 'jsx', 'js', 'tsx', 'ts'],
+  async rewrites() {
+    return [
+      {
+        source: '/:reqType*.html', // Old url with .html
+        destination: '/:reqType*', // Redirect without .html
+      },
+      // {
+      //   source: '/:details*.html', // Old url with .html
+      //   destination: '/:details*', // Redirect without .html
+      // },
+    ];
+  },
 };
 
 module.exports = nextConfig;

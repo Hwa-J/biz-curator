@@ -4,10 +4,15 @@ import OrderDetailLayout from '../orders/[paymentId]/OrderDetailLayout';
 import { useRouter } from 'next/router';
 import { useGetCancelRefundDetail } from '@/apis/cancel&refund';
 
-export default function CancelRefundDetailInfoContainer() {
-  const { query } = useRouter();
-  const title = query.details?.includes('cancellations') ? '주문취소' : '환불';
-  const [detail, id] = query!.details as string[];
+interface CancelRefundDetailInfoContainer {
+  title: string;
+  detail: string;
+  id: string;
+}
+export default function CancelRefundDetailInfoContainer({ title, detail, id }: CancelRefundDetailInfoContainer) {
+  // const { query } = useRouter();
+  // const title = query.details?.includes('cancellations') ? '주문취소' : '환불';
+  // const [detail, id] = query!.details as string[];
 
   const { data } = useGetCancelRefundDetail(detail, id);
 
