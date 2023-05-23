@@ -21,7 +21,7 @@ export const useGetCancelRefundList = (activedTab: string, selectedDateFilter: n
 };
 
 // 주문취소, 환불 신청 상세내역 조회 get API
-const getCancelRefundDetail = async (detail: string, id: string) => {
+export const getCancelRefundDetail = async (detail: string, id: string) => {
   const type = detail === 'cancellations' ? 'cancel' : 'refund';
   try {
     const { data } = await axiosInstance.get(`/api/mypages/orders/applications/${detail}/details?

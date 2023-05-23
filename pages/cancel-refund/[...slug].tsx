@@ -16,3 +16,28 @@ export default function CancelDetail() {
     </Layout>
   );
 }
+
+export async function getStaticPaths() {
+  const paths = [
+    // {
+    //   params: { slug: [] },
+    // },
+    {
+      params: { slug: ['cancellations'] },
+    },
+    {
+      params: { slug: ['refunds'] },
+    },
+  ];
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }: any) {
+  // Make sure params are what we expected
+  console.log(params);
+  return {
+    props: {
+      slug: params.slug,
+    },
+  };
+}
