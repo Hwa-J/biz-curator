@@ -2,8 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    loader: 'imgix',
-    path: 'https://s3-ebnatural.s3.ap-northeast-2.amazonaws.com',
+    // loader: 'imgix',
+    // path: 'https://s3-ebnatural.s3.ap-northeast-2.amazonaws.com',
     remotePatterns: [
       {
         protocol: 'https',
