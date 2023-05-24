@@ -33,8 +33,8 @@ export default function Home({ weeklyTrending, monthlyTrending }: TrendingProps)
         <MainBanner />
         <ProductCategoryList />
         <PromoBanner />
-        <WeeklyTrending weeklyTrending={weeklyTrending} />
-        <MonthlyTrending monthlyTrending={monthlyTrending} />
+        <WeeklyTrending />
+        <MonthlyTrending />
         <RequestBanner />
         <Footer />
         <NavBar />
@@ -43,13 +43,13 @@ export default function Home({ weeklyTrending, monthlyTrending }: TrendingProps)
   );
 }
 
-export async function getServerSideProps() {
-  const [weeklyTrending, monthlyTrending] = await Promise.all([getWeeklyTrending(), getMonthlyTrending()]);
+// export async function getServerSideProps() {
+//   const [weeklyTrending, monthlyTrending] = await Promise.all([getWeeklyTrending(), getMonthlyTrending()]);
 
-  return {
-    props: {
-      weeklyTrending: weeklyTrending.result.topWeeklyProducts,
-      monthlyTrending: monthlyTrending.result.topMonthlyProducts,
-    }, // will be passed to the page component as props
-  };
-}
+//   return {
+//     props: {
+//       weeklyTrending: weeklyTrending.result.topWeeklyProducts,
+//       monthlyTrending: monthlyTrending.result.topMonthlyProducts,
+//     }, // will be passed to the page component as props
+//   };
+// }
